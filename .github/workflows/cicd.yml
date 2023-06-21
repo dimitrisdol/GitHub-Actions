@@ -34,3 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      # Build the application in a native way    
+      - name: Build the app
+        run: mvn clean install -Dnative -Dmaven.test.skip=true
