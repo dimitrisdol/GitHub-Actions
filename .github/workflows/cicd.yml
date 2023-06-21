@@ -34,6 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # Use proper java
+      - name: Setup JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       # Build the application in a native way    
       - name: Build the app
         run: mvn clean install -Dnative -Dmaven.test.skip=true
